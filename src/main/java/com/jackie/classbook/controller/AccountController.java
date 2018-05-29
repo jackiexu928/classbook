@@ -11,12 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2018/5/29
  */
 @RestController
-@RequestMapping("/hello")
-public class HelloWorldController {
+@RequestMapping("/account")
+public class AccountController {
 
-    @RequestMapping("/hello")
-    public String index(){
-
-        return "Hello World";
+    @RequestMapping("/login")
+    public String login(){
+        return "";
     }
 }
