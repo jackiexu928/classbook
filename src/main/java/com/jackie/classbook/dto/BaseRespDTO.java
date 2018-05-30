@@ -7,5 +7,5 @@ package com.jackie.classbook.dto;
  * @author xujj
  * @date 2018/5/30
  */
-public class BaseRespDTO extends BaseDTO {
+public abstract class BaseRespDTO extends BaseDTO {
 }

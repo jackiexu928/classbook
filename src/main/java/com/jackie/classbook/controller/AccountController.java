@@ -1,6 +1,11 @@
 package com.jackie.classbook.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.jackie.classbook.dto.request.TestReqDTO;
+import com.jackie.classbook.infrastructure.repo.service.read.AccountReadService;
+import com.jackie.classbook.infrastructure.repo.service.read.impl.AccountReadServiceImpl;
 import com.jackie.classbook.process.Context;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,12 +19,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/account")
 public class AccountController extends BaseController {
+    @Autowired
+    private AccountReadService accountReadService;
 
     @RequestMapping("/login")
     public String login(){
-        Context<Integer, Long> context = new Context<>();
-        context.setSuccess(true);
-        context.setResult(2L);
+        TestReqDTO reqDTO = new TestReqDTO();
+        reqDTO.setInteger(1);
+        Context<TestReqDTO, Long> context = accountReadService.getLong(reqDTO);
+        /*context.setSuccess(true);
+        context.setResult(2L);*/
         return toJSON(context);
     }
 }

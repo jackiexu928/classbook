@@ -1,4 +1,4 @@
-package com.jackie.classbook.dto;
+package com.jackie.classbook.process;
 
 /**
  * Created with IntelliJ IDEA.
@@ -7,7 +7,9 @@ package com.jackie.classbook.dto;
  * @author xujj
  * @date 2018/5/30
  */
-public abstract class BaseReqDTO extends BaseDTO {
+public abstract class CommonQuery {
+    public CommonQuery() {
+    }
 
     public abstract void validation();
 }

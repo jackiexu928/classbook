@@ -9,7 +9,7 @@ import java.util.Date;
  * @author xujj
  * @date 2018/5/30
  */
-public class BaseDTO {
+public abstract class BaseDTO {
     public static final long serialVersionUID = 1L;
     /**
      * 创建者ID
