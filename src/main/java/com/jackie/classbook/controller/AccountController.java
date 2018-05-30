@@ -22,13 +22,10 @@ public class AccountController extends BaseController {
     @Autowired
     private AccountReadService accountReadService;
 
-    @RequestMapping("/login")
+    @RequestMapping(value = "/login", produces = {"application/json;charset=UTF-8"})
     public String login(){
         TestReqDTO reqDTO = new TestReqDTO();
         reqDTO.setInteger(1);
-        Context<TestReqDTO, Long> context = accountReadService.getLong(reqDTO);
-        /*context.setSuccess(true);
-        context.setResult(2L);*/
-        return toJSON(context);
+        return toJSON(accountReadService.getLong(reqDTO));
     }
 }
