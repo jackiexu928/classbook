@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/account")
-public class AccountController {
+public class AccountController extends BaseController {
 
     @RequestMapping("/login")
     public String login(){
