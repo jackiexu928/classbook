@@ -1,6 +1,5 @@
-package com.jackie.classbook.domain.dto;
+package com.jackie.classbook.dto;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,9 +7,9 @@ import java.util.Date;
  * Description:
  *
  * @author xujj
- * @date 2018/5/18
+ * @date 2018/5/30
  */
-public abstract class BaseDTO implements Serializable {
+public class BaseDTO {
     public static final long serialVersionUID = 1L;
     /**
      * 创建者ID

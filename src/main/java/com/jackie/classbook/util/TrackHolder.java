@@ -1,7 +1,7 @@
 package com.jackie.classbook.util;
 
 
-import com.jackie.classbook.domain.dto.response.AccountLoginRespDTO;
+import com.jackie.classbook.dto.response.AccountLoginRespDTO;
 
 public class TrackHolder {
 
