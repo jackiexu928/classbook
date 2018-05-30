@@ -1,5 +1,6 @@
 package com.jackie.classbook.controller;
 
+import com.jackie.classbook.process.Context;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,9 @@ public class AccountController extends BaseController {
 
     @RequestMapping("/login")
     public String login(){
-        return "Welcome";
+        Context<Integer, Long> context = new Context<>();
+        context.setSuccess(true);
+        context.setResult(2L);
+        return toJSON(context);
     }
 }
