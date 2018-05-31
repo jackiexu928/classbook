@@ -1,6 +1,8 @@
 package com.jackie.classbook.infrastructure.repo.service.read;
 
+import com.jackie.classbook.dto.request.LoginReqDTO;
 import com.jackie.classbook.dto.request.TestReqDTO;
+import com.jackie.classbook.dto.response.AccountLoginRespDTO;
 import com.jackie.classbook.process.Context;
 import org.springframework.stereotype.Service;
 
@@ -13,4 +15,8 @@ import org.springframework.stereotype.Service;
  */
 public interface AccountReadService {
     Context<TestReqDTO, Long> getLong(TestReqDTO param);
+
+    Context<LoginReqDTO,AccountLoginRespDTO> login(LoginReqDTO param);
+
+    Context<TestReqDTO,AccountLoginRespDTO> testTrackHolder(TestReqDTO param);
 }
