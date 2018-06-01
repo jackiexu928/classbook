@@ -16,7 +16,5 @@ import org.springframework.stereotype.Service;
 public interface AccountReadService {
     Context<TestReqDTO, Long> getLong(TestReqDTO param);
 
-    Context<LoginReqDTO,AccountLoginRespDTO> login(LoginReqDTO param);
-
     Context<TestReqDTO,AccountLoginRespDTO> testTrackHolder(TestReqDTO param);
 }

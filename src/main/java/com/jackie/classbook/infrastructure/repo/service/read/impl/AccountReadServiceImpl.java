@@ -36,24 +36,6 @@ public class AccountReadServiceImpl extends AbstractQueryService implements Acco
     }
 
     @Override
-    public Context<LoginReqDTO, AccountLoginRespDTO> login(LoginReqDTO param) {
-        AccountDO accountDO = new AccountDO();
-        if (param.getAccount().equals("18767159385") && param.getPassword().equals("123456")){
-            accountDO.setId(1L);
-            accountDO.setName("jackie");
-        }else {
-            throw new ClassbookException(ClassbookCodeEnum.ACCOUNT_OR_PASSWORD);
-        }
-        AccountLoginRespDTO respDTO = new AccountLoginRespDTO();
-        AccountRespDTO accountRespDTO = AccountDOFactory.converDOToDTO(accountDO);
-        accountRespDTO.setToken(UuidUtil.getUuidNoSplit());
-        respDTO.setAccountRespDTO(accountRespDTO);
-        Context<LoginReqDTO, AccountLoginRespDTO> context = new Context<>();
-        context.setResult(respDTO);
-        return context;
-    }
-
-    @Override
     public Context<TestReqDTO, AccountLoginRespDTO> testTrackHolder(TestReqDTO param) {
         AccountLoginRespDTO accountLoginRespDTO = TrackHolder.getTracker().getAccountLoginRespDTO();
         Context<TestReqDTO, AccountLoginRespDTO> context = new Context<>();
