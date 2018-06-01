@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,7 +33,7 @@ public class AccountController extends BaseController {
     @RequestMapping(value = "login",
                     method = RequestMethod.POST,
                     produces = {"application/json;charset=UTF-8"})
-    public String login(LoginReqDTO reqDTO){
+    public String login(LoginReqDTO reqDTO, HttpServletResponse response){
         Context<LoginReqDTO,AccountLoginRespDTO> context = accountWriteService.login(reqDTO);
         if (!context.isSuccess()){
             return toJSON(context);
@@ -47,6 +48,9 @@ public class AccountController extends BaseController {
         Cookie tokenCookie=new Cookie("token",token);
         tokenCookie.setMaxAge(RedisConstants.USER_CACHE_TIME_OUT);
         tokenCookie.setPath("/");
+
+        response.addCookie(accountCookie);
+        response.addCookie(tokenCookie);
 
         return toJSON(context);
     }
