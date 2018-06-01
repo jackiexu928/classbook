@@ -25,6 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 @RequestMapping("account")
 public class AccountController extends BaseController {
+
     @Autowired
     private AccountReadService accountReadService;
     @Autowired
